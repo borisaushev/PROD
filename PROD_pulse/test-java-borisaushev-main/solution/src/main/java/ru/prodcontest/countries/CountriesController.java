@@ -15,6 +15,15 @@ import java.util.List;
 import org.json.JSONObject;
 import ru.prodcontest.Json.JsonUtil;
 
+
+//с какого то момента 
+//я понял что делал все коммиты
+//не с того аккаунта
+//и теперь мой профиль
+//не такой зеленый
+//:(
+//в следующий раз буду повнимательнее
+
 @RestController
 public class CountriesController {
 
@@ -28,17 +37,23 @@ public class CountriesController {
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
-        for(String region : regions)
-            if(!Country.validateRegion(region))
-                return JsonUtil.getJsonErrorResponse(400, "неправильный формат региона", httpResponse);
+        //проверяем на паличие неверно указанных регионов
+        if(regions != null)
+            for(String region : regions)
+                if(!Country.validateRegion(region))
+                    return JsonUtil.getJsonErrorResponse(400, "неправильный формат региона", httpResponse);
 
+        //делаем запрос
         List<Country> selectedCountries = jdbcTemplate.query(sqlQuery, (rs, rowNum) ->
                 new Country(rs.getString("name"), rs.getString("alpha2"),
                             rs.getString("alpha3"), rs.getString("region")));
 
+        //формируем ответ
         JSONArray responseArray = new JSONArray();
+        
         for(Country country : selectedCountries) {
             JSONObject currentCountryJSON = new JSONObject();
+            
             currentCountryJSON.put("name", country.name());
             currentCountryJSON.put("alpha2", country.alpha2());
             currentCountryJSON.put("alpha3", country.alpha3());
@@ -80,6 +95,7 @@ public class CountriesController {
     }
 
 
+    //контроллер для информации о определенной стране
     @RequestMapping(path = "/api/countries/{alpha2}", produces = MediaType.APPLICATION_JSON_VALUE)
     public String searchCountry(@PathVariable("alpha2") String code, HttpServletResponse httpResponse) throws JSONException {
 
@@ -90,11 +106,12 @@ public class CountriesController {
         String sqlQuery = "SELECT * FROM countries WHERE alpha2='" + code + "'";
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+        
         try {
+            
             Country selectedCountry = jdbcTemplate.queryForObject(sqlQuery, (rs, rowNum) ->
                     new Country(rs.getString("name"), rs.getString("alpha2"),
                     rs.getString("alpha3"), rs.getString("region")));
-
 
             JSONObject currentCountryJSON = new JSONObject();
             currentCountryJSON.put("name", selectedCountry.name());
