@@ -15,14 +15,15 @@ import ru.prodcontest.friends.classes.FriendsUtil;
 public class FriendsRemoveController {
     @Autowired
     private UserTableUtil userTableUtil;
+
     @RequestMapping(method = RequestMethod.POST, path = "/api/friends/remove", produces = MediaType.APPLICATION_JSON_VALUE)
     public String removeFriend(@RequestBody String friendData,
-                            @RequestHeader(name = "Authorization") String unparsedToken,
-                            HttpServletResponse httpResponse) throws JSONException {
+                               @RequestHeader(name = "Authorization") String unparsedToken,
+                               HttpServletResponse httpResponse) throws JSONException {
 
         String token = TokenUtil.parseToken(unparsedToken);
         //Token is invalid
-        if(TokenUtil.isValidToken(token) == false)
+        if (!TokenUtil.isValidToken(token))
             return JsonUtil.getJsonErrorResponse(
                     401, "Переданный токен не существует либо некорректен",
                     httpResponse);
@@ -30,14 +31,14 @@ public class FriendsRemoveController {
         //parsing user data
         JSONObject JsonUserData = new JSONObject(friendData);
 
-        if(JsonUserData.has("login") == false)
+        if (!JsonUserData.has("login"))
             return JsonUtil.getJsonErrorResponse(400,
                     "Неправильный формат данных", httpResponse);
 
         String friendLogin = JsonUserData.getString("login");
         String login = TokenUtil.getLoginByToken(token);
 
-        if(userTableUtil.userDontExists(friendLogin) || userTableUtil.userDontExists(login))
+        if (userTableUtil.userDontExists(friendLogin) || userTableUtil.userDontExists(login))
             return JsonUtil.getJsonErrorResponse(404,
                     "Пользователь с указанным логином не найден.", httpResponse);
 

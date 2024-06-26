@@ -22,14 +22,15 @@ import java.util.concurrent.ThreadLocalRandom;
 public class PostPublishController {
     @Autowired
     private UserTableUtil userTableUtil;
+
     @RequestMapping(method = RequestMethod.POST, path = "/api/posts/new", produces = MediaType.APPLICATION_JSON_VALUE)
     public String publishPost(@RequestBody String postData,
-                            @RequestHeader(name = "Authorization") String unparsedToken,
-                            HttpServletResponse httpResponse) throws JSONException {
+                              @RequestHeader(name = "Authorization") String unparsedToken,
+                              HttpServletResponse httpResponse) throws JSONException {
 
         String token = TokenUtil.parseToken(unparsedToken);
         //Token is invalid
-        if(TokenUtil.isValidToken(token) == false)
+        if (!TokenUtil.isValidToken(token))
             return JsonUtil.getJsonErrorResponse(
                     401, "Переданный токен не существует либо некорректен",
                     httpResponse);
@@ -37,7 +38,7 @@ public class PostPublishController {
         //parsing post data
         JSONObject JsonPostData = new JSONObject(postData);
 
-        if(JsonPostData.has("content") == false || JsonPostData.has("tags") == false)
+        if (!JsonPostData.has("content") || !JsonPostData.has("tags"))
             return JsonUtil.getJsonErrorResponse(400,
                     "Неправильный формат данных", httpResponse);
 

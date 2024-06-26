@@ -8,25 +8,25 @@ public class FriendsUtil {
     private static final HashMap<String, LinkedList<Friend>> friendsMap = new HashMap<>();
 
     public static void addFriend(String login, Friend friend) {
-        if(friendsMap.get(login) == null)
+        if (friendsMap.get(login) == null)
             friendsMap.put(login, new LinkedList<>());
 
         var friendsList = friendsMap.get(login);
-        if(!Objects.equals(login, friend.login()))
+        if (!Objects.equals(login, friend.login()))
             friendsList.add(friend);
     }
 
     public static void removeFriend(String login, String friendsLogin) {
-        if(friendsMap.get(login) == null)
+        if (friendsMap.get(login) == null)
             friendsMap.put(login, new LinkedList<>());
 
         var friendsList = friendsMap.get(login);
         Friend friendToDelete = null;
 
-        for(Friend friend : friendsList)
-            if(Objects.equals(friend.login(), friendsLogin))
+        for (Friend friend : friendsList)
+            if (Objects.equals(friend.login(), friendsLogin))
                 friendToDelete = friend;
-        if(friendToDelete != null)
+        if (friendToDelete != null)
             friendsList.remove(friendToDelete);
 
     }
@@ -36,7 +36,7 @@ public class FriendsUtil {
     }
 
     public static LinkedList<Friend> getSortedFriendsList(String login) {
-        if(friendsMap.get(login) == null)
+        if (friendsMap.get(login) == null)
             friendsMap.put(login, new LinkedList<>());
 
         var friendsList = friendsMap.get(login);

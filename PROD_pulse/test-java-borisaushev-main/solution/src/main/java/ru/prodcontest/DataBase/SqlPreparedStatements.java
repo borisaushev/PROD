@@ -13,6 +13,7 @@ import java.sql.SQLException;
 public class SqlPreparedStatements {
     @Autowired
     private Connection connection;
+
     public PreparedStatement getFindUserByLoginPreparedStatement(String login) throws SQLException {
         PreparedStatement prepStatement = connection.prepareStatement(
                 "SELECT * FROM users WHERE login=?"
@@ -74,16 +75,16 @@ public class SqlPreparedStatements {
 
     public PreparedStatement getTableCreationPreparedStatement() throws SQLException {
         PreparedStatement prepStatement = connection.prepareStatement("""
-                    CREATE TABLE IF NOT EXISTS users (
-                        login TEXT PRIMARY KEY,
-                        password TEXT,
-                        email TEXT UNIQUE,
-                        phone TEXT UNIQUE,
-                        countryCode TEXT,
-                        isPublic BOOLEAN,
-                        image TEXT
-                    )
-                    """);
+                CREATE TABLE IF NOT EXISTS users (
+                    login TEXT PRIMARY KEY,
+                    password TEXT,
+                    email TEXT UNIQUE,
+                    phone TEXT UNIQUE,
+                    countryCode TEXT,
+                    isPublic BOOLEAN,
+                    image TEXT
+                )
+                """);
         return prepStatement;
     }
 

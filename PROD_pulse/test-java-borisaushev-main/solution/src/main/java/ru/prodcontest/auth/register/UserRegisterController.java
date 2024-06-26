@@ -6,10 +6,11 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import ru.prodcontest.DataBase.UserTableUtil;
 import ru.prodcontest.Json.JsonUtil;
 import ru.prodcontest.user.User;
 import ru.prodcontest.user.UserDataUtil;
-import ru.prodcontest.DataBase.UserTableUtil;
+
 import java.sql.SQLException;
 
 @RestController
@@ -30,12 +31,12 @@ public class UserRegisterController {
         User user = UserDataUtil.parseUserData(JsonUserData);
 
         //validateUserData
-        if(!UserDataUtil.validateUserData(user))
+        if (UserDataUtil.validateUserData(user))
             return JsonUtil.getJsonErrorResponse(400,
                     "Регистрационные данные не соответствуют ожидаемому формату и требованиям", httpResponse);
 
-        //if userAlreadyExists
-        else if(userTableUtil.userExists(user))
+            //if userAlreadyExists
+        else if (userTableUtil.userExists(user))
             return JsonUtil.getJsonErrorResponse(409,
                     "Нарушено требование на уникальность авторизационных данных пользователей", httpResponse);
 
@@ -50,9 +51,6 @@ public class UserRegisterController {
         return JsonResponse.toString();
 
     }
-
-
-
 
 
 }

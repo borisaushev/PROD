@@ -6,13 +6,12 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import ru.prodcontest.friends.classes.Friend;
-import ru.prodcontest.friends.classes.FriendsUtil;
-import ru.prodcontest.user.UserDataUtil;
+import ru.prodcontest.DataBase.UserTableUtil;
 import ru.prodcontest.Json.JsonUtil;
 import ru.prodcontest.JwtToken.TokenUtil;
+import ru.prodcontest.friends.classes.Friend;
+import ru.prodcontest.friends.classes.FriendsUtil;
 import ru.prodcontest.user.User;
-import ru.prodcontest.DataBase.UserTableUtil;
 
 import java.util.Objects;
 
@@ -22,7 +21,7 @@ public class UserProfilesController {
     @Autowired
     private UserTableUtil userTableUtil;
 
-    @RequestMapping(method = RequestMethod.GET, path="/api/profiles/{login}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.GET, path = "/api/profiles/{login}", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getUserProfile(@RequestHeader(name = "Authorization") String unparsedToken,
                                  @PathVariable("login") String login,
                                  HttpServletResponse httpResponse) throws JSONException {
@@ -30,30 +29,32 @@ public class UserProfilesController {
         String token = TokenUtil.parseToken(unparsedToken);
 
         //Token is invalid
-        if(TokenUtil.isValidToken(token) == false)
+        if (!TokenUtil.isValidToken(token))
             return JsonUtil.getJsonErrorResponse(401, "Переданный токен не существует либо некорректен.",
                     httpResponse);
 
         String requestLogin = TokenUtil.getLoginByToken(token);
 
         //No such user
-        if(userTableUtil.userDontExists(login))
+        if (userTableUtil.userDontExists(login))
             return JsonUtil.getJsonErrorResponse(403, "Профиль не может быть получен: " +
                             "пользователь с указанным логином не существует",
-                            httpResponse);
+                    httpResponse);
 
         //User is not public
         User user = userTableUtil.getUserByLogin(login);
-        if(user.isPublic == false && !Objects.equals(requestLogin, login)) {
+        if (!user.isPublic && !Objects.equals(requestLogin, login)) {
             boolean isAFriend = false;
             var friendsList = FriendsUtil.getFriendsList(login);
-            for(Friend friend : friendsList)
-                if(Objects.equals(friend.login(), requestLogin))
+            for (Friend friend : friendsList)
+                if (Objects.equals(friend.login(), requestLogin)) {
                     isAFriend = true;
-            if(isAFriend == false)
+                    break;
+                }
+            if (!isAFriend)
                 return JsonUtil.getJsonErrorResponse(403, "Профиль не может быть получен: " +
                                 "у отправителя запроса нет доступа к запрашиваемому профилю",
-                                httpResponse);
+                        httpResponse);
         }
 
         JSONObject JsonResponseObject = new JSONObject();

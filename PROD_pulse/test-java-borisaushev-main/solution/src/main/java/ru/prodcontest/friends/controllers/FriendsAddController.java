@@ -14,20 +14,20 @@ import ru.prodcontest.friends.classes.FriendsUtil;
 
 import java.time.Instant;
 import java.util.Date;
-import java.util.Objects;
 
 @RestController
 public class FriendsAddController {
     @Autowired
     private UserTableUtil userTableUtil;
+
     @RequestMapping(method = RequestMethod.POST, path = "/api/friends/add", produces = MediaType.APPLICATION_JSON_VALUE)
     public String addFriend(@RequestBody String friendData,
-                                 @RequestHeader(name = "Authorization") String unparsedToken,
-                                 HttpServletResponse httpResponse) throws JSONException {
+                            @RequestHeader(name = "Authorization") String unparsedToken,
+                            HttpServletResponse httpResponse) throws JSONException {
 
         String token = TokenUtil.parseToken(unparsedToken);
         //Token is invalid
-        if(TokenUtil.isValidToken(token) == false)
+        if (!TokenUtil.isValidToken(token))
             return JsonUtil.getJsonErrorResponse(
                     401, "Переданный токен не существует либо некорректен",
                     httpResponse);
@@ -35,16 +35,16 @@ public class FriendsAddController {
         //parsing user data
         JSONObject JsonUserData = new JSONObject(friendData);
 
-        if(JsonUserData.has("login") == false)
+        if (!JsonUserData.has("login"))
             return JsonUtil.getJsonErrorResponse(400,
                     "Неправильный формат данных", httpResponse);
-        
+
         String friendLogin = JsonUserData.getString("login");
         String login = TokenUtil.getLoginByToken(token);
 
-        if(userTableUtil.userDontExists(friendLogin) || userTableUtil.userDontExists(login))
+        if (userTableUtil.userDontExists(friendLogin) || userTableUtil.userDontExists(login))
             return JsonUtil.getJsonErrorResponse(404,
-                            "Пользователь с указанным логином не найден.", httpResponse);
+                    "Пользователь с указанным логином не найден.", httpResponse);
 
         Friend friend = new Friend(friendLogin, Date.from(Instant.now()));
         FriendsUtil.addFriend(login, friend);

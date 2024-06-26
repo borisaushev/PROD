@@ -22,12 +22,12 @@ public class CountriesService {
     public List<Country> searchCountries(String[] regions) {
 
         //проверяем на наличие неверно указанных регионов
-        if(regions != null)
-            for(String region : regions)
-                if(!Country.validateRegion(region))
+        if (regions != null)
+            for (String region : regions)
+                if (!Country.validateRegion(region))
                     throw new InputMismatchException("some of the regions are invalid");
 
-        String query =  countriesRepository.getCountriesByRegionsSQLQuerry(regions);
+        String query = countriesRepository.getCountriesByRegionsSQLQuery(regions);
 
         List<Country> selectedCountries = jdbcTemplate.query(query, (rs, rowNum) ->
                 new Country(rs.getString("name"), rs.getString("alpha2"),
@@ -37,7 +37,7 @@ public class CountriesService {
     }
 
     public String searchCountry(String code) throws JSONException {
-        if(code.length() != 2 || !code.matches("[A-z]{2}")) {
+        if (code.length() != 2 || !code.matches("[A-z]{2}")) {
             System.out.println("invalid code: " + code);
             throw new InputMismatchException("country code invalid");
         }
@@ -49,7 +49,7 @@ public class CountriesService {
                 (rs, rowNum) -> new Country(rs.getString("name"), rs.getString("alpha2"),
                         rs.getString("alpha3"), rs.getString("region")));
 
-        if(selectedCountry.isEmpty())
+        if (selectedCountry.isEmpty())
             throw new ResultSetEmpty("no country with such code exists");
 
         Country country = selectedCountry.get(0);
@@ -67,7 +67,7 @@ public class CountriesService {
     public JSONArray getJsonArray(List<Country> selectedCountries) throws JSONException {
         JSONArray responseArray = new JSONArray();
 
-        for(Country country : selectedCountries) {
+        for (Country country : selectedCountries) {
             JSONObject currentCountryJSON = new JSONObject();
 
             currentCountryJSON.put("name", country.name());

@@ -13,7 +13,8 @@ import java.sql.SQLException;
 @ComponentScan
 public class ConnectionBean {
     @Autowired
-    private  DataSource dataSource;
+    private DataSource dataSource;
+
     @Bean
     Connection getConnection() {
         try {

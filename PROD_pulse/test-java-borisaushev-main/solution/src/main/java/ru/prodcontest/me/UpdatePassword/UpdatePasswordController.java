@@ -28,13 +28,13 @@ public class UpdatePasswordController {
         JSONObject newUserData = new JSONObject(userData);
         String token = TokenUtil.parseToken(unparsedToken);
 
-        if(newUserData.has("oldPassword") == false || newUserData.has("newPassword") == false)
+        if (!newUserData.has("oldPassword") || !newUserData.has("newPassword"))
             return JsonUtil.getJsonErrorResponse(
                     400, "Некорректные данные",
                     httpResponse);
 
         //Token is invalid
-        if (TokenUtil.isValidToken(token) == false)
+        if (!TokenUtil.isValidToken(token))
             return JsonUtil.getJsonErrorResponse(
                     401, "Переданный токен не существует либо некорректен",
                     httpResponse);
@@ -42,13 +42,13 @@ public class UpdatePasswordController {
         String login = TokenUtil.getLoginByToken(token);
         String oldPassword = TokenUtil.getPasswordByToken(token);
 
-        if(!Objects.equals(oldPassword, newUserData.getString("oldPassword")))
+        if (!Objects.equals(oldPassword, newUserData.getString("oldPassword")))
             return JsonUtil.getJsonErrorResponse(
                     403, "Указанный пароль не совпадает с действительным",
                     httpResponse);
 
         //no such user
-        if (login == null || userTableUtil.userExists(login, oldPassword) == false)
+        if (login == null || !userTableUtil.userExists(login, oldPassword))
             return JsonUtil.getJsonErrorResponse(
                     400, "Пользователя не существует",
                     httpResponse);
@@ -58,7 +58,7 @@ public class UpdatePasswordController {
         //updating it
         user.setPassword(newUserData.getString("newPassword"));
 
-        if (UserDataUtil.validateUserData(user) == false)
+        if (UserDataUtil.validateUserData(user))
             return JsonUtil.getJsonErrorResponse(
                     400, "Данные не соответствуют ожидаемому формату и требованиям",
                     httpResponse);

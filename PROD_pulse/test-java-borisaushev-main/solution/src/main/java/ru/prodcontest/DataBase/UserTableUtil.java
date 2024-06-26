@@ -14,7 +14,7 @@ public class UserTableUtil {
     private SqlPreparedStatements preparedStatements;
 
     public void createTableIfNeeded() {
-        if(tableIsCreated)
+        if (tableIsCreated)
             return;
 
         try {

@@ -16,22 +16,19 @@ import java.security.spec.KeySpec;
 public class UserDataUtil {
     public static boolean validateUserData(User user) {
         boolean isValid = validateUserLogin(user.login)
-                    && validateUserEmail(user.email)
-                    && validateUserPassword(user.password)
-                    && validateUserCountryCode(user.countryCode)
-                    && validateUserPhone(user.phone)
-                    && validateUserImage(user.image);
+                && validateUserEmail(user.email)
+                && validateUserPassword(user.password)
+                && validateUserCountryCode(user.countryCode)
+                && validateUserPhone(user.phone)
+                && validateUserImage(user.image);
 
         return isValid;
     }
 
     private static boolean validateUserLogin(String login) {
-        if(login.length() > 30 || login.isEmpty())
+        if (login.length() > 30 || login.isEmpty())
             return false;
-        if(!login.matches("[a-zA-Z0-9-]+"))
-            return false;
-
-        return true;
+        return login.matches("[a-zA-Z0-9-]+");
     }
 
     private static boolean validateUserEmail(String email) {
@@ -39,16 +36,13 @@ public class UserDataUtil {
     }
 
     private static boolean validateUserPassword(String password) {
-        if(password.length() < 6 || password.length() > 100)
+        if (password.length() < 6 || password.length() > 100)
             return false;
-        else if(!password.matches(".*[0-9].*"))
+        else if (!password.matches(".*[0-9].*"))
             return false;
-        else if(!password.matches(".*[A-Z].*"))
+        else if (!password.matches(".*[A-Z].*"))
             return false;
-        else if(!password.matches(".*[a-z].*"))
-            return false;
-
-        return true;
+        else return password.matches(".*[a-z].*");
     }
 
     private static boolean validateUserCountryCode(String countryCode) {
@@ -73,6 +67,7 @@ public class UserDataUtil {
 
     private static SecretKeyFactory factory;
     private static byte[] salt;
+
     private static void init() throws NoSuchAlgorithmException {
         salt = new byte[]{-120, 21, 41, 12, 49, 28, 71, 42, 88, 19, -21, -75, 73, -1, 15, -26};
         factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
@@ -82,13 +77,13 @@ public class UserDataUtil {
         StringBuilder passwordHash = new StringBuilder();
 
         try {
-            if(factory == null)
+            if (factory == null)
                 init();
 
             KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 65536, 64);
             byte[] hash = factory.generateSecret(spec).getEncoded();
 
-            for(byte ch : hash)
+            for (byte ch : hash)
                 passwordHash.append((char) ch);
 
         } catch (NoSuchAlgorithmException | InvalidKeySpecException exception) {
@@ -112,10 +107,10 @@ public class UserDataUtil {
 
         isPublic = jsonData.getBoolean("isPublic");
 
-        if(jsonData.has("phone"))
+        if (jsonData.has("phone"))
             phone = jsonData.getString("phone");
 
-        if(jsonData.has("image"))
+        if (jsonData.has("image"))
             image = jsonData.getString("image");
 
         User user = new User(login, password, email, countryCode, isPublic, phone, image);

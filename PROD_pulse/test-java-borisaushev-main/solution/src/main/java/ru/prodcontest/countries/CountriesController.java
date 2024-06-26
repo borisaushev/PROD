@@ -1,20 +1,11 @@
 package ru.prodcontest.countries;
 
-import jakarta.servlet.http.HttpServletResponse;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
-import javax.sql.DataSource;
-import java.util.InputMismatchException;
 import java.util.List;
-import org.json.JSONObject;
-import ru.prodcontest.Json.JsonUtil;
 
 @RestController
 @RequestMapping("/api/countries")

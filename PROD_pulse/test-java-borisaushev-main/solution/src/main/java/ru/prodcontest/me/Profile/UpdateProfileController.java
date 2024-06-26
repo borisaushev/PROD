@@ -6,11 +6,11 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import ru.prodcontest.DataBase.UserTableUtil;
 import ru.prodcontest.Json.JsonUtil;
 import ru.prodcontest.JwtToken.TokenUtil;
 import ru.prodcontest.user.User;
 import ru.prodcontest.user.UserDataUtil;
-import ru.prodcontest.DataBase.UserTableUtil;
 
 @RestController
 public class UpdateProfileController {
@@ -27,7 +27,7 @@ public class UpdateProfileController {
         String token = TokenUtil.parseToken(unparsedToken);
 
         //Token is invalid
-        if(TokenUtil.isValidToken(token) == false)
+        if (!TokenUtil.isValidToken(token))
             return JsonUtil.getJsonErrorResponse(
                     401, "Переданный токен не существует либо некорректен",
                     httpResponse);
@@ -37,22 +37,22 @@ public class UpdateProfileController {
         newUserData.put("password", oldPassword);
 
         //no such user
-        if(userTableUtil.userDontExists(login))
+        if (userTableUtil.userDontExists(login))
             return JsonUtil.getJsonErrorResponse(
-                401, "Пользователя не существует",
-                httpResponse);
+                    401, "Пользователя не существует",
+                    httpResponse);
 
         //getting old user data
         User user = userTableUtil.getUserByLogin(login);
         //updating it
         updateUserData(newUserData, user);
 
-        if(!UserDataUtil.validateUserData(user) || newUserData.has("login") || newUserData.has("password"))
+        if (UserDataUtil.validateUserData(user) || newUserData.has("login") || newUserData.has("password"))
             return JsonUtil.getJsonErrorResponse(
                     400, "Данные не соответствуют ожидаемому формату и требованиям",
                     httpResponse);
 
-        if(newUserData.has("phone") && userTableUtil.phoneNumberAlreadyTaken(user.phone))
+        if (newUserData.has("phone") && userTableUtil.phoneNumberAlreadyTaken(user.phone))
             return JsonUtil.getJsonErrorResponse(
                     409, "Нарушено требование на уникальность авторизационных данных пользователей",
                     httpResponse);
@@ -64,26 +64,27 @@ public class UpdateProfileController {
 
         return JsonResponseObject.toString();
     }
+
     private void updateUserData(JSONObject newUserData, User user) throws JSONException {
-        if(newUserData.has("login"))
+        if (newUserData.has("login"))
             user.setLogin(newUserData.getString("login"));
 
-        if(newUserData.has("email"))
+        if (newUserData.has("email"))
             user.setEmail(newUserData.getString("email"));
 
-        if(newUserData.has("password"))
+        if (newUserData.has("password"))
             user.setPassword(newUserData.getString("password"));
 
-        if(newUserData.has("countryCode"))
+        if (newUserData.has("countryCode"))
             user.setCountryCode(newUserData.getString("countryCode"));
 
-        if(newUserData.has("isPublic"))
+        if (newUserData.has("isPublic"))
             user.setPublic(newUserData.getBoolean("isPublic"));
 
-        if(newUserData.has("phone"))
+        if (newUserData.has("phone"))
             user.setPhone(newUserData.getString("phone"));
 
-        if(newUserData.has("image"))
+        if (newUserData.has("image"))
             user.setImage(newUserData.getString("image"));
 
     }

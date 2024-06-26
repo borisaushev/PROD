@@ -5,8 +5,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import ru.prodcontest.user.User;
 
-import java.net.http.HttpResponse;
-
 public class JsonUtil {
     public static String getJsonErrorResponse(int status, String reason, HttpServletResponse httpResponse) throws JSONException {
         httpResponse.setStatus(status);

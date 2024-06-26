@@ -34,8 +34,8 @@ public class TokenUtil {
     }
 
     public static synchronized void recallAllTokens(String login) {
-        for(Map.Entry<String, String> pair : tokenMap.entrySet())
-            if(pair.getValue().equals(login))
+        for (Map.Entry<String, String> pair : tokenMap.entrySet())
+            if (pair.getValue().equals(login))
                 tokenMap.remove(pair.getKey());
 
     }
@@ -50,10 +50,8 @@ public class TokenUtil {
     public static Boolean isValidToken(String token) {
         try {
             JWT.decode(token);
-            if(getLoginByToken(token) != null)
-                return true;
-            return false;
-        } catch(JWTDecodeException exc) {
+            return getLoginByToken(token) != null;
+        } catch (JWTDecodeException exc) {
             return false;
         }
     }
@@ -69,7 +67,7 @@ public class TokenUtil {
                 .setExpiration(Date.from(Instant.now().plus(12L, ChronoUnit.HOURS)))
                 .compact();
 
-        return  jwtToken;
+        return jwtToken;
     }
 
 }

@@ -16,6 +16,7 @@ import ru.prodcontest.friends.classes.FriendsUtil;
 import ru.prodcontest.posts.classes.Post;
 import ru.prodcontest.posts.utils.PostsUtil;
 import ru.prodcontest.user.User;
+
 import java.util.Objects;
 
 @RestController
@@ -24,7 +25,7 @@ public class GetPostsByLogin {
     @Autowired
     private UserTableUtil userTableUtil;
 
-    @RequestMapping(method = RequestMethod.GET, path="/api/posts/feed/{login}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.GET, path = "/api/posts/feed/{login}", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getPost(@RequestHeader(name = "Authorization") String unparsedToken,
                           @PathVariable("login") String author,
                           @RequestParam(name = "limit", required = false) Integer limit,
@@ -34,41 +35,43 @@ public class GetPostsByLogin {
         String token = TokenUtil.parseToken(unparsedToken);
 
         //Token is invalid
-        if(TokenUtil.isValidToken(token) == false)
+        if (!TokenUtil.isValidToken(token))
             return JsonUtil.getJsonErrorResponse(401, "Переданный токен не существует либо некорректен.",
                     httpResponse);
 
         String requestLogin = TokenUtil.getLoginByToken(token);
 
         //No such user
-        if(userTableUtil.userDontExists(author))
+        if (userTableUtil.userDontExists(author))
             return JsonUtil.getJsonErrorResponse(404, "Пользователь не найден",
                     httpResponse);
 
         //User is not public
         User user = userTableUtil.getUserByLogin(author);
-        if(user.isPublic == false && !Objects.equals(requestLogin, author)) {
+        if (!user.isPublic && !Objects.equals(requestLogin, author)) {
             boolean isAFriend = false;
 
             var friendsList = FriendsUtil.getFriendsList(author);
-            for(Friend friend : friendsList)
-                if(Objects.equals(friend.login(), requestLogin))
+            for (Friend friend : friendsList)
+                if (Objects.equals(friend.login(), requestLogin)) {
                     isAFriend = true;
+                    break;
+                }
 
-            if(isAFriend == false)
+            if (!isAFriend)
                 return JsonUtil.getJsonErrorResponse(404, "Пользователь не найден либо к нему нет доступа.",
                         httpResponse);
         }
 
         JSONArray postsJsonArray = new JSONArray();
 
-        if(limit == null)
+        if (limit == null)
             limit = 5;
-        if(offset == null)
+        if (offset == null)
             offset = 0;
 
         var postsList = PostsUtil.getSortedPostsList(author);
-        for(int i = offset; i < limit && i < postsList.size(); i++) {
+        for (int i = offset; i < limit && i < postsList.size(); i++) {
             Post post = postsList.get(i);
             JSONObject postJson = PostsUtil.getPostJsonObject(post);
             postsJsonArray.put(postJson);

@@ -17,34 +17,35 @@ import ru.prodcontest.posts.utils.PostsUtil;
 public class MyPostsController {
     @Autowired
     private UserTableUtil userTableUtil;
+
     @RequestMapping(method = RequestMethod.GET, path = "/api/posts/feed/my", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getMyPosts(@RequestHeader(name = "Authorization") String unparsedToken,
-                                 @RequestParam(name = "limit", required = false) Integer limit,
-                                 @RequestParam(name = "offset", required = false) Integer offset,
-                                 HttpServletResponse httpResponse) throws JSONException {
+                             @RequestParam(name = "limit", required = false) Integer limit,
+                             @RequestParam(name = "offset", required = false) Integer offset,
+                             HttpServletResponse httpResponse) throws JSONException {
 
         String token = TokenUtil.parseToken(unparsedToken);
         //Token is invalid
-        if(TokenUtil.isValidToken(token) == false)
+        if (!TokenUtil.isValidToken(token))
             return JsonUtil.getJsonErrorResponse(
                     401, "Переданный токен не существует либо некорректен",
                     httpResponse);
 
         String login = TokenUtil.getLoginByToken(token);
 
-        if(userTableUtil.userDontExists(login))
+        if (userTableUtil.userDontExists(login))
             return JsonUtil.getJsonErrorResponse(400,
                     "Пользователь с указанным логином не найден.", httpResponse);
 
         JSONArray postsJsonArray = new JSONArray();
 
-        if(limit == null)
+        if (limit == null)
             limit = 5;
-        if(offset == null)
+        if (offset == null)
             offset = 0;
 
         var myPostsList = PostsUtil.getSortedPostsList(login);
-        for(int i = offset; i < limit && i < myPostsList.size(); i++) {
+        for (int i = offset; i < limit && i < myPostsList.size(); i++) {
             Post post = myPostsList.get(i);
             JSONObject postJson = PostsUtil.getPostJsonObject(post);
             postsJsonArray.put(postJson);

@@ -15,7 +15,7 @@ public class PostsUtil {
     private final static HashSet<Post> postsSet = new LinkedHashSet<>();
 
     public static void addPost(String author, Post post) {
-        if(postsMap.get(author) == null)
+        if (postsMap.get(author) == null)
             postsMap.put(author, new LinkedList<>());
 
         postsMap.get(author).add(post);
@@ -23,14 +23,14 @@ public class PostsUtil {
     }
 
     public static Post getPostByPostId(String postId) {
-        for(Post post : postsSet)
-            if(post.id().equals(postId))
+        for (Post post : postsSet)
+            if (post.id().equals(postId))
                 return post;
         return null;
     }
 
     public static LinkedList<Post> getSortedPostsList(String login) {
-        if(postsMap.get(login) == null)
+        if (postsMap.get(login) == null)
             postsMap.put(login, new LinkedList<>());
 
         var postList = postsMap.get(login);
