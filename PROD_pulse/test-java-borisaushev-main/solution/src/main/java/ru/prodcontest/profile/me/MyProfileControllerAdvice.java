@@ -1,4 +1,4 @@
-package ru.prodcontest.countries;
+package ru.prodcontest.profile.me;
 
 import jakarta.servlet.http.HttpServletResponse;
 import org.json.JSONException;
@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import ru.prodcontest.Json.JsonUtil;
-import ru.prodcontest.countries.Exceptions.NoSuchCountryException;
+import ru.prodcontest.user.Exceptions.UserAlreadyExistsException;
 
 import java.util.InputMismatchException;
 
-@ControllerAdvice("ru.prodcontest.countries")
+@ControllerAdvice("ru.prodcontest.profile.me")
 @ResponseBody
-public class CountriesControllerAdvice {
+public class MyProfileControllerAdvice {
 
     @ExceptionHandler(InputMismatchException.class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
@@ -22,11 +22,10 @@ public class CountriesControllerAdvice {
         return JsonUtil.getJsonErrorResponse(400, exc.getMessage(), response);
     }
 
-    @ExceptionHandler(NoSuchCountryException.class)
-    @ResponseStatus(value = HttpStatus.NOT_FOUND)
-    public String NoSuchCountryException(NoSuchCountryException exc, HttpServletResponse response) throws JSONException {
-        return JsonUtil.getJsonErrorResponse(404, exc.getMessage(), response);
+    @ExceptionHandler(UserAlreadyExistsException.class)
+    @ResponseStatus(value = HttpStatus.CONFLICT)
+    public String badRequestException(UserAlreadyExistsException exc, HttpServletResponse response) throws JSONException {
+        return JsonUtil.getJsonErrorResponse(409, exc.getMessage(), response);
     }
-
 
 }

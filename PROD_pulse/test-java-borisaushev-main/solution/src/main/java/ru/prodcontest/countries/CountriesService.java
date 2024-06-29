@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Service;
-import ru.prodcontest.Exceptions.ResultSetEmpty;
+import org.springframework.transaction.annotation.Transactional;
+import ru.prodcontest.countries.Exceptions.NoSuchCountryException;
 
 import java.util.InputMismatchException;
 import java.util.List;
@@ -19,6 +20,7 @@ public class CountriesService {
     @Autowired
     private NamedParameterJdbcTemplate jdbcTemplate;
 
+    @Transactional
     public List<Country> searchCountries(String[] regions) {
 
         //проверяем на наличие неверно указанных регионов
@@ -36,8 +38,9 @@ public class CountriesService {
 
     }
 
+    @Transactional
     public String searchCountry(String code) throws JSONException {
-        if (code.length() != 2 || !code.matches("[A-z]{2}")) {
+        if(code.length() != 2 || !code.matches("[A-z]{2}")) {
             System.out.println("invalid code: " + code);
             throw new InputMismatchException("country code invalid");
         }
@@ -49,8 +52,8 @@ public class CountriesService {
                 (rs, rowNum) -> new Country(rs.getString("name"), rs.getString("alpha2"),
                         rs.getString("alpha3"), rs.getString("region")));
 
-        if (selectedCountry.isEmpty())
-            throw new ResultSetEmpty("no country with such code exists");
+        if(selectedCountry.isEmpty())
+            throw new NoSuchCountryException("no country with such code exists");
 
         Country country = selectedCountry.get(0);
 

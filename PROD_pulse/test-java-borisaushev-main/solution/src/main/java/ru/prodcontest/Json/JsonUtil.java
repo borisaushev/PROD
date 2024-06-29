@@ -13,23 +13,20 @@ public class JsonUtil {
         return JsonResponseObject.toString();
     }
 
-    public static void fillJsonObjectWithUserData(JSONObject jsonObject, User user) {
-        try {
+    public static JSONObject getUserJson(User user) throws JSONException {
+            JSONObject jsonObject = new JSONObject();
 
-            jsonObject.put("login", user.login);
-            jsonObject.put("email", user.email);
-            jsonObject.put("countryCode", user.countryCode);
-            jsonObject.put("isPublic", user.isPublic);
+            jsonObject.put("login", user.login());
+            jsonObject.put("email", user.email());
+            jsonObject.put("countryCode", user.countryCode());
+            jsonObject.put("isPublic", user.isPublic());
+            jsonObject.put("phone", user.phone());
+            jsonObject.put("image", user.image());
 
-            if (user.phone != null)
-                jsonObject.put("phone", user.phone);
+            JSONObject profileJson = new JSONObject();
+            profileJson.put("profile", jsonObject);
 
-            if (user.image != null)
-                jsonObject.put("image", user.image);
-
-        } catch (JSONException exc) {
-            throw new RuntimeException(exc);
-        }
+            return profileJson;
     }
 
 }
