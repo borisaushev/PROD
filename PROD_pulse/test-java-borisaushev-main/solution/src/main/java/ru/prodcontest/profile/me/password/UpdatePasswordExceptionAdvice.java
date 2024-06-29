@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import ru.prodcontest.Json.JsonUtil;
-import ru.prodcontest.countries.Exceptions.NoSuchCountryException;
 
 import java.util.InputMismatchException;
 

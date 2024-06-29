@@ -1,11 +1,11 @@
-package ru.prodcontest.user.repository;
+package ru.prodcontest.userInfo.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import ru.prodcontest.user.User;
+import ru.prodcontest.userInfo.User;
 
 import java.util.List;
 

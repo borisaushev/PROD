@@ -3,7 +3,7 @@ package ru.prodcontest.Json;
 import jakarta.servlet.http.HttpServletResponse;
 import org.json.JSONException;
 import org.json.JSONObject;
-import ru.prodcontest.user.User;
+import ru.prodcontest.userInfo.User;
 
 public class JsonUtil {
     public static String getJsonErrorResponse(int status, String reason, HttpServletResponse httpResponse) throws JSONException {

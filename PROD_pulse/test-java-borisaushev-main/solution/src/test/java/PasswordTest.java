@@ -1,5 +1,5 @@
 import org.junit.jupiter.api.Test;
-import static ru.prodcontest.user.UserDataUtil.*;
+import static ru.prodcontest.userInfo.UserDataUtil.*;
 
 public class PasswordTest {
     @Test

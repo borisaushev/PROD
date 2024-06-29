@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.prodcontest.Json.JsonUtil;
 import ru.prodcontest.auth.signin.token.Jwt.JwtTokenService;
-import ru.prodcontest.user.User;
+import ru.prodcontest.userInfo.User;
 
 @RestController
 @RequestMapping("/api/me/profile")

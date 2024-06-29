@@ -5,10 +5,8 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-        import ru.prodcontest.Json.JsonUtil;
 import ru.prodcontest.auth.signin.token.Jwt.JwtTokenService;
 import ru.prodcontest.profile.me.myProfile.MyProfileService;
-import ru.prodcontest.user.User;
 
 @RestController
 @RequestMapping("/api/me/updatePassword")

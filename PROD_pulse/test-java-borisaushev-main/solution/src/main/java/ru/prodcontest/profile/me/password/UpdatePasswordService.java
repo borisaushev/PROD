@@ -5,9 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.prodcontest.auth.signin.token.Jwt.JwtTokenService;
 import ru.prodcontest.profile.me.myProfile.MyProfileService;
-import ru.prodcontest.user.User;
-import ru.prodcontest.user.UserDataUtil;
-import ru.prodcontest.user.repository.UserRepository;
+import ru.prodcontest.userInfo.User;
+import ru.prodcontest.userInfo.UserDataUtil;
+import ru.prodcontest.userInfo.repository.UserRepository;
 
 import java.util.InputMismatchException;
 

@@ -2,10 +2,10 @@ package ru.prodcontest.auth.register;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.prodcontest.user.Exceptions.UserAlreadyExistsException;
-import ru.prodcontest.user.User;
-import ru.prodcontest.user.UserDataUtil;
-import ru.prodcontest.user.repository.UserRepository;
+import ru.prodcontest.userInfo.Exceptions.UserAlreadyExistsException;
+import ru.prodcontest.userInfo.User;
+import ru.prodcontest.userInfo.UserDataUtil;
+import ru.prodcontest.userInfo.repository.UserRepository;
 
 @Service
 public class UserService {

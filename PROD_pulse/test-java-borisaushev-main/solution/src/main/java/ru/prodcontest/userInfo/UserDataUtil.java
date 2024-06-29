@@ -1,4 +1,4 @@
-package ru.prodcontest.user;
+package ru.prodcontest.userInfo;
 
 import org.json.JSONException;
 import org.json.JSONObject;

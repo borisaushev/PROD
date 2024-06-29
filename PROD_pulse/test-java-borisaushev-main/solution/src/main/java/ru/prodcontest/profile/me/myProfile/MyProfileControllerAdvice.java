@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import ru.prodcontest.Json.JsonUtil;
-import ru.prodcontest.user.Exceptions.UserAlreadyExistsException;
+import ru.prodcontest.userInfo.Exceptions.UserAlreadyExistsException;
 
 import java.util.InputMismatchException;
 

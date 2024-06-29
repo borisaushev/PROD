@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.prodcontest.Json.JsonUtil;
-import ru.prodcontest.user.User;
-import ru.prodcontest.user.UserDataUtil;
+import ru.prodcontest.userInfo.User;
+import ru.prodcontest.userInfo.UserDataUtil;
 
 @RequestMapping("api/auth/register")
 @RestController
