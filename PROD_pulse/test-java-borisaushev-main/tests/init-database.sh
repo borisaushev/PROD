@@ -284,5 +284,3 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname postgres <<-EOSQL
 
 EOSQL
 
-postman login --with-api-key PMAK-66803ced0ef85f00011bac9b-ac1e23eac1fa09e9d4d641168fc76e65e4
-postman collection run 29783751-8d2563b2-888d-4088-bd03-217032213636
