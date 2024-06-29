@@ -12,30 +12,34 @@ import java.net.http.HttpResponse;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
+import java.util.InputMismatchException;
 
 public class UserDataUtil {
     public static boolean validateUserData(User user) {
-        boolean isValid = validateUserLogin(user.login)
-                && validateUserEmail(user.email)
-                && validateUserPassword(user.password)
-                && validateUserCountryCode(user.countryCode)
-                && validateUserPhone(user.phone)
-                && validateUserImage(user.image);
+        boolean isValid = validateUserLogin(user.login())
+                && validateUserEmail(user.email())
+                && validateUserPassword(user.password())
+                && validateUserCountryCode(user.countryCode())
+                && validateUserPhone(user.phone())
+                && validateUserImage(user.image());
+
+        if(!isValid)
+            throw new InputMismatchException("Неверные данные пользователя");
 
         return isValid;
     }
 
-    private static boolean validateUserLogin(String login) {
+    public static boolean validateUserLogin(String login) {
         if (login.length() > 30 || login.isEmpty())
             return false;
         return login.matches("[a-zA-Z0-9-]+");
     }
 
-    private static boolean validateUserEmail(String email) {
+    public static boolean validateUserEmail(String email) {
         return email.length() <= 50 && !email.isEmpty();
     }
 
-    private static boolean validateUserPassword(String password) {
+    public static boolean validateUserPassword(String password) {
         if (password.length() < 6 || password.length() > 100)
             return false;
         else if (!password.matches(".*[0-9].*"))
@@ -45,7 +49,7 @@ public class UserDataUtil {
         else return password.matches(".*[a-z].*");
     }
 
-    private static boolean validateUserCountryCode(String countryCode) {
+    public static boolean validateUserCountryCode(String countryCode) {
         HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create("http://localhost:8080/api/countries/" + countryCode)).build();
         HttpClient client = HttpClient.newHttpClient();
         HttpResponse<String> response;
@@ -57,11 +61,11 @@ public class UserDataUtil {
         }
     }
 
-    private static boolean validateUserPhone(String phone) {
+    public static boolean validateUserPhone(String phone) {
         return phone == null || (phone.matches("\\+[\\d]+") && phone.length() <= 20 && !phone.isEmpty());
     }
 
-    private static boolean validateUserImage(String image) {
+    public static boolean validateUserImage(String image) {
         return image == null || (image.length() <= 200 && !image.isEmpty());
     }
 
@@ -90,7 +94,8 @@ public class UserDataUtil {
             throw new RuntimeException(exception);
         }
 
-        return passwordHash.toString();
+        return passwordHash.toString().replaceAll("\u0000", "");
+
     }
 
     public static User parseUserData(JSONObject jsonData) throws JSONException {
