@@ -145,4 +145,10 @@ public class UserRepository {
 
     }
 
+    public void deleteTokensById(int userId) {
+        var map = new MapSqlParameterSource()
+                .addValue("userId", userId);
+        jdbcTemplate.update("DELETE FROM tokens WHERE id = :userId", map);
+    }
+
 }

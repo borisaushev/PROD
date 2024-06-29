@@ -1,4 +1,4 @@
-package ru.prodcontest.profile.me;
+package ru.prodcontest.profile.me.myProfile;
 
 import org.json.JSONException;
 import org.json.JSONObject;

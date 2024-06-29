@@ -1,4 +1,4 @@
-package ru.prodcontest.profile.me;
+package ru.prodcontest.profile.me.myProfile;
 
 import jakarta.servlet.http.HttpServletResponse;
 import org.json.JSONException;
@@ -12,7 +12,7 @@ import ru.prodcontest.user.Exceptions.UserAlreadyExistsException;
 
 import java.util.InputMismatchException;
 
-@ControllerAdvice("ru.prodcontest.profile.me")
+@ControllerAdvice("ru.prodcontest.profile.me.myProfile")
 @ResponseBody
 public class MyProfileControllerAdvice {
 
