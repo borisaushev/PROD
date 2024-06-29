@@ -1,3 +1,5 @@
+# Технологии: **</br>Spring Boot, Spring MVC, JWT, </br>Swagger, Postman, PostgreSQL, </br>Spring JDBC, Maven, OpenApi 3, </br>Http HttpAPI, JSON API**
+
 # PROD v2: Pulse Backend
 
 Ваши коллеги разрабатывают социальную сеть для инвесторов. Уже совсем скоро им нужно сдавать проект, а вся команда бэкенд-разработчиков ушла в отпуск. 
