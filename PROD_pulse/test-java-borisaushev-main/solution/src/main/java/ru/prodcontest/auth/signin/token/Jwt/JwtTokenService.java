@@ -75,7 +75,6 @@ public class JwtTokenService {
     public String parseToken(String token) {
         if(token.length() < BEARER_PREFIX.length() + 1)
             throw new TokenDoesntExistException("invalid token");
-        System.out.println("token: " + token);
         token = token.substring(BEARER_PREFIX.length());
         System.out.println("parsed token: " + token);
         return token;

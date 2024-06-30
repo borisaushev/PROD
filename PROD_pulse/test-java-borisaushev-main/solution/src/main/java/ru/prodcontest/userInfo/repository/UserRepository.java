@@ -120,19 +120,23 @@ public class UserRepository {
     public User getUserById(int userId) {
         var map = new MapSqlParameterSource()
                 .addValue("userId", userId);
-
-        User user = jdbcTemplate.queryForObject("SELECT * FROM users WHERE id = :userId", map, (rs, rowNum) ->
-                new User(
-                rs.getString("login"),
-                rs.getString("password"),
-                rs.getString("email"),
-                rs.getString("country_code"),
-                rs.getBoolean("is_public"),
-                rs.getString("user_phone"),
-                rs.getString("user_image")
-        ));
+        String sql = "SELECT * FROM users WHERE id = :userId";
+        User user = executeAndParseUserData(sql, map);
 
         return user;
+    }
+
+    private User executeAndParseUserData(String sql, MapSqlParameterSource map) {
+        return jdbcTemplate.queryForObject(sql, map, (rs, rowNum) ->
+                new User(
+                        rs.getString("login"),
+                        rs.getString("password"),
+                        rs.getString("email"),
+                        rs.getString("country_code"),
+                        rs.getBoolean("is_public"),
+                        rs.getString("user_phone"),
+                        rs.getString("user_image")
+                ));
     }
 
     public void updateUserProperty(int userId, String columnName, Object propertyValue) {
@@ -149,6 +153,36 @@ public class UserRepository {
         var map = new MapSqlParameterSource()
                 .addValue("userId", userId);
         jdbcTemplate.update("DELETE FROM tokens WHERE id = :userId", map);
+    }
+
+    public User getUserByLogin(String login) {
+        var map = new MapSqlParameterSource()
+                .addValue("login", login);
+        String sql = "SELECT * FROM users WHERE login = :login";
+        User user = executeAndParseUserData(sql, map);
+
+        return user;
+    }
+
+    public List<Integer> getUserFriends(int userId) {
+
+        var map = new MapSqlParameterSource()
+                .addValue("userId", userId);
+
+        List<Integer> friendsList = jdbcTemplate.query("SELECT friends_with FROM friends WHERE id = :userId", map, (rs, rn) -> rs.getInt(1));
+
+        return friendsList;
+
+    }
+
+    public int getIdByLogin(String login) {
+
+        var map = new MapSqlParameterSource()
+                .addValue("login", login);
+
+        int userId = jdbcTemplate.queryForObject("SELECT id FROM users WHERE login = :login", map, Integer.class);
+
+        return userId;
     }
 
 }

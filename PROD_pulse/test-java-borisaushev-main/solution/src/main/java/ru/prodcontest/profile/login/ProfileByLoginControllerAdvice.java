@@ -1,5 +1,4 @@
-package ru.prodcontest.profile.me.password;
-
+package ru.prodcontest.profile.login;
 
 import jakarta.servlet.http.HttpServletResponse;
 import org.json.JSONException;
@@ -12,21 +11,13 @@ import ru.prodcontest.Json.JsonUtil;
 
 import java.util.InputMismatchException;
 
-@ControllerAdvice("ru.prodcontest.profile.me.password")
+@ControllerAdvice("ru.prodcontest.profile.login")
 @ResponseBody
-public class UpdatePasswordExceptionAdvice {
-
+public class ProfileByLoginControllerAdvice {
 
     @ExceptionHandler(InputMismatchException.class)
     @ResponseStatus(value = HttpStatus.FORBIDDEN)
-    public String InputMismatchException(InputMismatchException exc, HttpServletResponse response) throws JSONException {
+    public String badRequestException(InputMismatchException exc, HttpServletResponse response) throws JSONException {
         return JsonUtil.getJsonErrorResponse(403, exc.getMessage(), response);
     }
-
-    @ExceptionHandler(SecurityException.class)
-    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
-    public String SecurityException(SecurityException exc, HttpServletResponse response) throws JSONException {
-        return JsonUtil.getJsonErrorResponse(400, exc.getMessage(), response);
-    }
-
 }

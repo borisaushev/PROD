@@ -33,7 +33,7 @@ public class TokenExceptionHandler {
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(MalformedJwtException.class)
     @ResponseBody
-    public String TokenDoesntExistExceptionHandling(MalformedJwtException exc, HttpServletResponse response) throws JSONException {
+    public String TokenError(MalformedJwtException exc, HttpServletResponse response) throws JSONException {
         return JsonUtil.getJsonErrorResponse(401, exc.getMessage(), response);
     }
 

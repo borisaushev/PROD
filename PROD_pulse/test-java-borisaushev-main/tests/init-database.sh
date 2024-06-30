@@ -281,6 +281,13 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname postgres <<-EOSQL
       token text
   );
 
+  DROP TABLE IF EXISTS friends CASCADE;
+  CREATE TABLE friends (
+      id integer REFERENCES users(id) ON DELETE CASCADE,
+      friend_with integer REFERENCES users(id) ON DELETE CASCADE,
+      added_at timestamp
+  )
+
 
 EOSQL
 
