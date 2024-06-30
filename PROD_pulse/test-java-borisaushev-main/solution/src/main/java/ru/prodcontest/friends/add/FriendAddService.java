@@ -1,4 +1,4 @@
-package ru.prodcontest.profile.login;
+package ru.prodcontest.friends.add;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,10 +10,12 @@ import java.util.InputMismatchException;
 import java.util.Objects;
 
 @Service
-public class ProfileByLoginService {
+public class FriendAddService {
 
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    FriendAddRepository friendAddRepository;
 
     @Autowired
     JwtTokenService jwtTokenService;
@@ -23,30 +25,25 @@ public class ProfileByLoginService {
             throw new InputMismatchException("no user with such login");
     }
 
-    public void checkIfUserProfileIsAvailable(String login, String token) {
+    public void addFriend(String login, String token) {
         int requestAuthorId = jwtTokenService.getIdByToken(token);
-        int requestedProfileId = userRepository.getIdByLogin(login);
+        int friendToAddId = userRepository.getIdByLogin(login);
 
         User requestAuthorProfile = userRepository.getUserById(requestAuthorId);
         User requestedProfile = userRepository.getUserByLogin(login);
 
-        if(requestedProfile.isPublic() || profilesAreSame(requestedProfile, requestAuthorProfile))
+        if(profilesAreSame(requestedProfile, requestAuthorProfile) || userRepository.getUserFriends(requestAuthorId).contains(friendToAddId))
             return;
 
-        if(userRepository.getUserFriends(requestedProfileId).contains(requestAuthorId))
+        if(userRepository.getUserFriends(requestAuthorId).contains(friendToAddId))
             return;
 
-        throw new InputMismatchException("profile not available");
+        friendAddRepository.addFriend(requestAuthorId, friendToAddId);
 
     }
 
     private boolean profilesAreSame(User u1, User u2) {
         return Objects.equals(u1.login(), u2.login());
-    }
-
-    public User getRequestedUserProfile(String login) {
-        User requestedProfile = userRepository.getUserByLogin(login);
-        return requestedProfile;
     }
 
 }

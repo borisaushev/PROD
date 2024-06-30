@@ -169,7 +169,7 @@ public class UserRepository {
         var map = new MapSqlParameterSource()
                 .addValue("userId", userId);
 
-        List<Integer> friendsList = jdbcTemplate.query("SELECT friends_with FROM friends WHERE id = :userId", map, (rs, rn) -> rs.getInt(1));
+        List<Integer> friendsList = jdbcTemplate.query("SELECT friend_with FROM friends WHERE id = :userId", map, (rs, rn) -> rs.getInt(1));
 
         return friendsList;
 
@@ -183,6 +183,16 @@ public class UserRepository {
         int userId = jdbcTemplate.queryForObject("SELECT id FROM users WHERE login = :login", map, Integer.class);
 
         return userId;
+    }
+
+
+    public String getLoginById(int id) {
+        var map = new MapSqlParameterSource()
+                .addValue("id", id);
+
+        String login = jdbcTemplate.queryForObject("SELECT login FROM users WHERE id = :id", map, String.class);
+
+        return login;
     }
 
 }
