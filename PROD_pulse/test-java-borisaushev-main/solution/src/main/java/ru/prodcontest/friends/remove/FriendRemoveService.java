@@ -3,11 +3,7 @@ package ru.prodcontest.friends.remove;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.prodcontest.auth.signin.token.Jwt.JwtTokenService;
-import ru.prodcontest.userInfo.User;
 import ru.prodcontest.userInfo.repository.UserRepository;
-
-import java.util.InputMismatchException;
-import java.util.Objects;
 
 @Service
 public class FriendRemoveService {

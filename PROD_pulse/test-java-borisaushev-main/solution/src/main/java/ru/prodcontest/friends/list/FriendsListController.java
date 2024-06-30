@@ -2,12 +2,9 @@ package ru.prodcontest.friends.list;
 
 
 import org.json.JSONException;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.web.bind.annotation.*;
 import ru.prodcontest.auth.signin.token.Jwt.JwtTokenService;
-import ru.prodcontest.friends.list.FriendsListService;
 import ru.prodcontest.profile.me.myProfile.MyProfileService;
 
 @RestController

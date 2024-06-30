@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.prodcontest.auth.signin.token.Jwt.JwtTokenService;
 import ru.prodcontest.friends.Friend;
-import ru.prodcontest.friends.remove.FriendRemoveRepository;
 import ru.prodcontest.userInfo.repository.UserRepository;
 
 import java.util.List;
