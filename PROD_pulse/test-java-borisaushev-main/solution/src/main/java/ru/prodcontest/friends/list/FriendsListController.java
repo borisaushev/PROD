@@ -11,7 +11,6 @@ import ru.prodcontest.profile.me.myProfile.MyProfileService;
 @RequestMapping("api/friends")
 public class FriendsListController {
 
-
     @Autowired
     private MyProfileService myProfileService;
     @Autowired
