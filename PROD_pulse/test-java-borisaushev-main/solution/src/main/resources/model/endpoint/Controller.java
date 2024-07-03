@@ -12,7 +12,7 @@ public class Controller {
 
     @GetMapping
     @ResponseBody
-    public String doGet() {
+    public String doGet(@RequestBody String userData, @RequestHeader(name = "Authorization") String token) {
         return "";
     }
 
