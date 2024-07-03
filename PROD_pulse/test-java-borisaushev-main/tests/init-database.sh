@@ -288,6 +288,15 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname postgres <<-EOSQL
       added_at timestamp
   )
 
+  DROP TABLE IF EXISTS posts CASCADE;
+  CREATE TABLE posts (
+      id integer REFERENCES users(id) ON DELETE CASCADE,
+      content text,
+      TODO: tags Array,
+      created_at timestamp,
+      likes_count integer,
+      dislikes_count integer
+  );
 
 EOSQL
 

@@ -1,4 +1,4 @@
-package ru.prodcontest.model.endpoint;
+package endpoint;
 
 
 import jakarta.servlet.http.HttpServletResponse;
