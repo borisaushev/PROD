@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ec527363-305f-4445-8771-45adec4799aa" name="Changes" comment="Просто коммит">
+      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostRequestObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/model/endpoint/RequestControllerAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/model/endpoint/RequestRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/model/endpoint/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/model/endpoint/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/model/endpoint/RequestControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/RequestControllerAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/model/endpoint/RequestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/model/endpoint/RequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/model/endpoint/RequestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/tests/init-database.sh" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/tests/init-database.sh" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="v2" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;borisaushev&quot;
+  }
+}</component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="215efab4-c32b-435a-8bb9-fab26d01fdc7" />
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/borisaushev/PROD-stage-2.git&quot;,
+    &quot;accountId&quot;: &quot;215efab4-c32b-435a-8bb9-fab26d01fdc7&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2i9M94Ly4ukCQu4AGeUnUEOog2B" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.PROD Application.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProdcontestApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PasswordTest.testPassword.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TokenTest.testToken.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/artur/IdeaProjects/PROD-stage-2/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.prodcontest.auth.signin.Exceptions" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create" />
+      <recent name="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/friends/remove" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/model" />
+      <recent name="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/tests" />
+      <recent name="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/test/java" />
+      <recent name="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ru.prodcontest.auth.signin" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.prodcontest.profile.me" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.PROD Application">
+    <configuration name="PROD Application" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ru.prodcontest.ProdcontestApplication" />
+      <module name="java-prodcontest-template" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PasswordTest.testPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-prodcontest-template" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PasswordTest" />
+      <option name="METHOD_NAME" value="testPassword" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TokenTest.testToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-prodcontest-template" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TokenTest" />
+      <option name="METHOD_NAME" value="testToken" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.PROD Application" />
+      <item itemvalue="JUnit.TokenTest.testToken" />
+      <item itemvalue="JUnit.PasswordTest.testPassword" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TokenTest.testToken" />
+        <item itemvalue="JUnit.PasswordTest.testPassword" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec527363-305f-4445-8771-45adec4799aa" name="Changes" comment="" />
+      <created>1718898186395</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718898186395</updated>
+    </task>
+    <task id="LOCAL-00001" summary="починил модуль countries">
+      <option name="closed" value="true" />
+      <created>1719426633603</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1719426633603</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Почистил модули">
+      <option name="closed" value="true" />
+      <created>1719430289255</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1719430289255</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Переделал все до обновления своего профиля">
+      <option name="closed" value="true" />
+      <created>1719691294801</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1719691294802</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Переделал все до обновления своего профиля">
+      <option name="closed" value="true" />
+      <created>1719691369280</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719691369280</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Переделал все до обновления своего профиля">
+      <option name="closed" value="true" />
+      <created>1719692782667</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719692782667</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Добавить ручку passwords">
+      <option name="closed" value="true" />
+      <created>1719695454515</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1719695454515</updated>
+    </task>
+    <task id="LOCAL-00007" summary="наметил планы">
+      <option name="closed" value="true" />
+      <created>1719696314165</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1719696314165</updated>
+    </task>
+    <task id="LOCAL-00008" summary="планы выполнил, наметил новые">
+      <option name="closed" value="true" />
+      <created>1719763128636</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1719763128636</updated>
+    </task>
+    <task id="LOCAL-00009" summary="добавил /profiles/{login}">
+      <option name="closed" value="true" />
+      <created>1719763184094</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719763184094</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Доделал /friends/*">
+      <option name="closed" value="true" />
+      <created>1719768454595</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1719768454595</updated>
+    </task>
+    <task id="LOCAL-00011" summary="импорты почищены">
+      <option name="closed" value="true" />
+      <created>1719768489871</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1719768489871</updated>
+    </task>
+    <task id="LOCAL-00012" summary="добавил модель эндпойнта">
+      <option name="closed" value="true" />
+      <created>1719830722305</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1719830722305</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Просто коммит">
+      <option name="closed" value="true" />
+      <created>1720033763450</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1720033763450</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="typos in comments" />
+    <MESSAGE value="починил модуль countries" />
+    <MESSAGE value="Почистил модули" />
+    <MESSAGE value="Переделал все до обновления своего профиля" />
+    <MESSAGE value="Добавить ручку passwords" />
+    <MESSAGE value="наметил планы" />
+    <MESSAGE value="планы выполнил, наметил новые" />
+    <MESSAGE value="добавил /profiles/{login}" />
+    <MESSAGE value="Доделал /friends/*" />
+    <MESSAGE value="импорты почищены" />
+    <MESSAGE value="добавил модель эндпойнта" />
+    <MESSAGE value="Просто коммит" />
+    <option name="LAST_COMMIT_MESSAGE" value="Просто коммит" />
+  </component>
+</project>
