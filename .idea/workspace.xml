@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec527363-305f-4445-8771-45adec4799aa" name="Changes" comment="Просто коммит">
-      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostRequestObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/model/endpoint/RequestControllerAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/model/endpoint/RequestRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/model/endpoint/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/model/endpoint/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/model/endpoint/RequestControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/RequestControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/model/endpoint/RequestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/model/endpoint/RequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/model/endpoint/RequestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/tests/init-database.sh" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/tests/init-database.sh" afterDir="false" />
+    <list default="true" id="ec527363-305f-4445-8771-45adec4799aa" name="Changes" comment="просто">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +28,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -45,7 +38,7 @@
   }
 }</component>
   <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="215efab4-c32b-435a-8bb9-fab26d01fdc7" />
+    <option name="defaultAccountId" value="f308bb67-a805-485e-a214-dcb76c64866f" />
   </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
@@ -257,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720033763450</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="просто">
+      <option name="closed" value="true" />
+      <created>1720039334399</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1720039334399</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -318,6 +319,7 @@
     <MESSAGE value="импорты почищены" />
     <MESSAGE value="добавил модель эндпойнта" />
     <MESSAGE value="Просто коммит" />
-    <option name="LAST_COMMIT_MESSAGE" value="Просто коммит" />
+    <MESSAGE value="просто" />
+    <option name="LAST_COMMIT_MESSAGE" value="просто" />
   </component>
 </project>
