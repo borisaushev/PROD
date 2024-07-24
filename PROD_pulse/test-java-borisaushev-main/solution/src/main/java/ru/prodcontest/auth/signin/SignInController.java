@@ -29,6 +29,7 @@ public class SignInController {
         var jsonResponse = new JSONObject();
         jsonResponse.put("token", token);
 
+        System.out.println("generated token for " + login + ": " + token);
         return jsonResponse.toString();
 
     }

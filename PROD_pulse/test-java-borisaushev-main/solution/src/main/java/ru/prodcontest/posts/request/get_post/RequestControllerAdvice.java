@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import ru.prodcontest.Json.JsonUtil;
+import ru.prodcontest.auth.signin.Exceptions.UserDoesntExistsException;
 import ru.prodcontest.posts.post.exception.PostIsPrivateException;
 import ru.prodcontest.posts.post.exception.PostNotFoundException;
 
-@ControllerAdvice("ru.prodcontest.posts")
+@ControllerAdvice("ru.prodcontest.posts.request")
 @ResponseBody
 public class RequestControllerAdvice {
 
@@ -25,6 +26,12 @@ public class RequestControllerAdvice {
     @ExceptionHandler(PostNotFoundException.class)
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
     public String postIsPrivate(PostNotFoundException exc, HttpServletResponse response) throws JSONException {
+        return JsonUtil.getJsonErrorResponse(404, exc.getMessage(), response);
+    }
+
+    @ExceptionHandler(UserDoesntExistsException.class)
+    @ResponseStatus(value = HttpStatus.NOT_FOUND)
+    public String badRequestException(UserDoesntExistsException exc, HttpServletResponse response) throws JSONException {
         return JsonUtil.getJsonErrorResponse(404, exc.getMessage(), response);
     }
 
