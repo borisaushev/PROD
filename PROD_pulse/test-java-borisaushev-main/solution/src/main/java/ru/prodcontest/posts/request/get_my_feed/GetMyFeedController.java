@@ -1,20 +1,13 @@
 package ru.prodcontest.posts.request.get_my_feed;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.web.bind.annotation.*;
 import ru.prodcontest.auth.signin.token.Jwt.JwtTokenService;
 import ru.prodcontest.posts.post.Post;
-import ru.prodcontest.posts.request.get_post.GetPostRequestService;
 import ru.prodcontest.profile.me.myProfile.MyProfileService;
 
-import java.sql.Date;
-import java.time.Instant;
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/posts/feed/my")
