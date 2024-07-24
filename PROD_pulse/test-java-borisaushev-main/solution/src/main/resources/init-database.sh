@@ -288,25 +288,5 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname postgres <<-EOSQL
       added_at timestamp
   );
 
-/*
-  DROP TABLE IF EXISTS tags;
-  CREATE TABLE tags
-  (
-      post_id TEXT NOT NULL,
-      tag VARCHAR(100) NOT NULL
-  );
-
-  DROP TABLE IF EXISTS posts CASCADE;
-  CREATE TABLE posts (
-
-      content text,
-      created_at timestamp,
-      likes_count integer,
-      dislikes_count integer
-  );
-*/
-
-
 EOSQL
-
 
