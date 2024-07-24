@@ -1,16 +1,12 @@
 package ru.prodcontest.posts.create;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import ru.prodcontest.posts.post.Post;
+
+import java.util.UUID;
 
 @Repository
-public class CreatePostRepository {
-    @Autowired
-    NamedParameterJdbcTemplate jdbcTemplate;
-
-    public void doSmth() {
-
-    }
+public interface CreatePostRepository extends JpaRepository<Post, UUID> {
 
 }

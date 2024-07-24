@@ -5,8 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec527363-305f-4445-8771-45adec4799aa" name="Changes" comment="просто">
+      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/get/GetPostController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/get/GetPostRequestRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/get/GetPostRequestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/post/Post.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/post/exception/PostIsPrivateException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/post/exception/PostNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/post/request_object/CreatePostRequestObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/testing/PostmanTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/init-database.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/openapi.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/ProdcontestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/ProdcontestApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/friends/list/FriendsListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/friends/list/FriendsListRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostRequestObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/RequestControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/get/RequestControllerAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +57,11 @@
   }
 }</component>
   <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="f308bb67-a805-485e-a214-dcb76c64866f" />
+    <option name="defaultAccountId" value="215efab4-c32b-435a-8bb9-fab26d01fdc7" />
   </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/borisaushev/PROD-stage-2.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/borisaushev/PROD.git&quot;,
     &quot;accountId&quot;: &quot;215efab4-c32b-435a-8bb9-fab26d01fdc7&quot;
   }
 }</component>
@@ -58,33 +77,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.PROD Application.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ProdcontestApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PasswordTest.testPassword.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TokenTest.testToken.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/artur/IdeaProjects/PROD-stage-2/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.PROD Application.executor": "Run",
+    "Application.ProdcontestApplication.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "JUnit.PasswordTest.testPassword.executor": "Run",
+    "JUnit.TokenTest.testToken.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/artur/IdeaProjects/PROD/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/get",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ru.prodcontest.auth.signin.Exceptions" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/get" />
       <recent name="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create" />
       <recent name="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/friends/remove" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources" />
       <recent name="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/model" />
       <recent name="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/tests" />
       <recent name="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/test/java" />

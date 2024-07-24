@@ -1,8 +1,10 @@
 package ru.prodcontest.friends.list;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Repository;
 import ru.prodcontest.friends.Friend;
 
@@ -14,6 +16,7 @@ public class FriendsListRepository {
     @Autowired
     private NamedParameterJdbcTemplate jdbcTemplate;
 
+    @Transactional
     public List<Friend> getFriendsList(int requestAuthorId, int limit, int offset) {
 
         var map = new MapSqlParameterSource()
