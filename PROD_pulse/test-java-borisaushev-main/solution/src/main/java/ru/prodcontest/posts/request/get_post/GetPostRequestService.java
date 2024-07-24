@@ -1,4 +1,4 @@
-package ru.prodcontest.posts.get;
+package ru.prodcontest.posts.request.get_post;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,9 +33,9 @@ public class GetPostRequestService {
 
         boolean postIsPublic = userRepository.getUserById(authorId).isPublic();
 
-        if(postIsPublic == false) {
+        if(!postIsPublic) {
             List<Integer> friends = userRepository.getUserFriends(authorId);
-            if(friends.contains(userId) == false)
+            if(!friends.contains(userId))
                 throw new PostIsPrivateException("cannot access this post");
         }
 

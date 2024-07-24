@@ -4,28 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec527363-305f-4445-8771-45adec4799aa" name="Changes" comment="просто">
-      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/get/GetPostController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/get/GetPostRequestRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/get/GetPostRequestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/post/Post.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/post/exception/PostIsPrivateException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/post/exception/PostNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/post/request_object/CreatePostRequestObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/testing/PostmanTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/init-database.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/openapi.yml" afterDir="false" />
+    <list default="true" id="ec527363-305f-4445-8771-45adec4799aa" name="Changes" comment="Начал подключать Hibernate, реализовал создание и получение постов">
+      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/request/get_my_feed/GetMyFeedController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/request/get_my_feed/GetMyFeedRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/request/get_my_feed/GetMyFeedService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/ProdcontestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/ProdcontestApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/friends/list/FriendsListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/friends/list/FriendsListRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostRequestObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/RequestControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/get/RequestControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/friends/remove/FriendRemoveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/friends/remove/FriendRemoveService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/request/create_post/CreatePostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/request/create_post/CreatePostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create/CreatePostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/request/create_post/CreatePostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/get/GetPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/request/get_post/GetPostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/get/GetPostRequestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/request/get_post/GetPostRequestRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/get/GetPostRequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/request/get_post/GetPostRequestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/get/RequestControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/request/get_post/RequestControllerAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/post/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/post/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/post/request_object/CreatePostRequestObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/post/request_object/CreatePostRequestObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/init-database.sh" beforeDir="false" afterPath="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/resources/init-database.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +84,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/artur/IdeaProjects/PROD/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/get",
+    "last_opened_file_path": "/Users/artur/IdeaProjects/PROD/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/request/get_my_feed",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -100,6 +97,7 @@
       <recent name="ru.prodcontest.auth.signin.Exceptions" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/request/get_my_feed" />
       <recent name="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/get" />
       <recent name="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/posts/create" />
       <recent name="$PROJECT_DIR$/PROD_pulse/test-java-borisaushev-main/solution/src/main/java/ru/prodcontest/friends/remove" />
@@ -279,7 +277,31 @@
       <option name="project" value="LOCAL" />
       <updated>1720039334399</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Начал подключать Hibernate, реализовал создание и получение постов">
+      <option name="closed" value="true" />
+      <created>1721826657615</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1721826657615</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Начал подключать Hibernate, реализовал создание и получение постов">
+      <option name="closed" value="true" />
+      <created>1721826842041</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1721826842041</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Начал подключать Hibernate, реализовал создание и получение постов">
+      <option name="closed" value="true" />
+      <created>1721826893267</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1721826893267</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -341,6 +363,7 @@
     <MESSAGE value="добавил модель эндпойнта" />
     <MESSAGE value="Просто коммит" />
     <MESSAGE value="просто" />
-    <option name="LAST_COMMIT_MESSAGE" value="просто" />
+    <MESSAGE value="Начал подключать Hibernate, реализовал создание и получение постов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Начал подключать Hibernate, реализовал создание и получение постов" />
   </component>
 </project>

@@ -17,9 +17,7 @@ public class FriendRemoveService {
     JwtTokenService jwtTokenService;
 
     public boolean userDoesntExists(String login) {
-        if(userRepository.userExistsWithProperty("login", login) == Boolean.FALSE)
-            return true;
-        return false;
+        return userRepository.userExistsWithProperty("login", login) == Boolean.FALSE;
     }
 
     public void removeFriend(String login, String token) {

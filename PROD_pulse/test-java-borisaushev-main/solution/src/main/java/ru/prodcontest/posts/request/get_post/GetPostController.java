@@ -1,4 +1,4 @@
-package ru.prodcontest.posts.get;
+package ru.prodcontest.posts.request.get_post;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -39,4 +39,16 @@ public class Post {
     @Column(name = "dislikes_count")
     private long dislikesCount;
 
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", content='" + content + '\'' +
+                ", author='" + author + '\'' +
+                ", tags=" + tags +
+                ", createdAt=" + createdAt +
+                ", likesCount=" + likesCount +
+                ", dislikesCount=" + dislikesCount +
+                '}';
+    }
 }

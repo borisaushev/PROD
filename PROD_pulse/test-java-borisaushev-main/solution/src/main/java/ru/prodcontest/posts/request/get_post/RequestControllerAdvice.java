@@ -1,4 +1,4 @@
-package ru.prodcontest.posts.get;
+package ru.prodcontest.posts.request.get_post;
 
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import ru.prodcontest.Json.JsonUtil;
 import ru.prodcontest.posts.post.exception.PostIsPrivateException;
 import ru.prodcontest.posts.post.exception.PostNotFoundException;
-
-import java.util.InputMismatchException;
 
 @ControllerAdvice("ru.prodcontest.posts")
 @ResponseBody

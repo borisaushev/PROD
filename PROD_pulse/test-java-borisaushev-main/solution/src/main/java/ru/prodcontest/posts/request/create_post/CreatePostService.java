@@ -1,4 +1,4 @@
-package ru.prodcontest.posts.create;
+package ru.prodcontest.posts.request.create_post;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,7 +8,6 @@ import ru.prodcontest.userInfo.repository.UserRepository;
 
 import java.sql.Date;
 import java.time.Instant;
-import java.util.UUID;
 
 @Service
 public class CreatePostService {
