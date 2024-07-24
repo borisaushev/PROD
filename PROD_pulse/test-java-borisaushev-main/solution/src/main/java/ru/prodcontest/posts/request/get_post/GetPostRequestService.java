@@ -33,7 +33,7 @@ public class GetPostRequestService {
 
         boolean postIsPublic = userRepository.getUserById(authorId).isPublic();
 
-        if(!postIsPublic) {
+        if(!postIsPublic && authorId != userId) {
             List<Integer> friends = userRepository.getUserFriends(authorId);
             if(!friends.contains(userId))
                 throw new PostIsPrivateException("cannot access this post");
