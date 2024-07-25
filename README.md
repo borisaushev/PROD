@@ -1,4 +1,5 @@
-# Технологии: **</br>Spring Boot, Spring MVC, Hibernate</br>JWT, Swagger, Postman, PostgreSQL, </br>Spring JDBC, Maven, OpenApi 3, </br>Http HttpAPI, JSON API**
+# Технологии: 
+**</br>Spring Boot, Spring MVC, Hibernate</br>Spring Data Jpa, JWT, Swagger,</br> Postman, PostgreSQL, Spring JDBC,</br> Maven, OpenApi 3, HttpAPI,</br> JSON API**
 
 # PROD v2: Pulse Backend
 
