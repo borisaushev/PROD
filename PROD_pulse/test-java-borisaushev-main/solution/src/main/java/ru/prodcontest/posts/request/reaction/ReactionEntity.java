@@ -15,7 +15,7 @@ public class ReactionEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="post_id")
     private Post post;
 

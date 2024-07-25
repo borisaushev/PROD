@@ -22,23 +22,9 @@ public class ReactionPostController {
     @Autowired
     private MyProfileService myProfileService;
 
-    /*
-    * 1. токен
-    * 2. доступ
-    * 3. последняя реакция
-    * 4. меняем цифры как надо
-    */
-
-
-    /*
-    * таблица реакций
-    * удаляем из таблицы лайков
-    * добавляем новую реакцию
-    * возвращаем счет(лайк) и счет(дизлайк)
-    * */
-
     @PostMapping("/like")
     public Post likePost(@PathVariable("postId") UUID postId, @RequestHeader(name = "Authorization") String token) {
+        System.out.println("Reacting to post: " + postId);
 
         token = jwtTokenService.parseToken(token);
         jwtTokenService.validateToken(token);
@@ -48,11 +34,15 @@ public class ReactionPostController {
 
         Post post = reactionPostService.reactToPost(postId, requestUserId, Reactions.Like);
 
+        System.out.println("After reaction: " + post);
+
         return post;
     }
 
     @PostMapping("/dislike")
     public Post dislikePost(@PathVariable("postId") UUID postId, @RequestHeader(name = "Authorization") String token) {
+
+        System.out.println("Reacting to post: " + postId);
 
         token = jwtTokenService.parseToken(token);
         jwtTokenService.validateToken(token);
@@ -61,6 +51,8 @@ public class ReactionPostController {
         int requestUserId = jwtTokenService.getIdByToken(token);
 
         Post post = reactionPostService.reactToPost(postId, requestUserId, Reactions.Dislike);
+
+        System.out.println("After reaction: " + post);
 
         return post;
     }

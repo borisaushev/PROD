@@ -44,6 +44,8 @@ public class ReactionPostService {
 
         ReactionEntity reaction = new ReactionEntity();
         reaction.setReactionType(reactionType);
+        reaction.setPost(post);
+        reaction.setAuthor(login);
 
         reactionRepository.save(reaction);
     }

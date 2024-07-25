@@ -9,7 +9,6 @@ import ru.prodcontest.posts.post.repository.PostRepository;
 import ru.prodcontest.userInfo.User;
 import ru.prodcontest.userInfo.repository.UserRepository;
 
-import java.nio.file.AccessDeniedException;
 import java.util.List;
 
 @Service
