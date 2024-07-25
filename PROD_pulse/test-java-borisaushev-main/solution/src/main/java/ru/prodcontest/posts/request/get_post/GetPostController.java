@@ -29,7 +29,7 @@ public class GetPostController {
         myProfileService.validateTokenForUser(token);
 
         int userId = jwtTokenService.getIdByToken(token);
-        Post post = getPostRequestService.getPost(userId, postId);
+        Post post = getPostRequestService.getPostAndCheckAccess(userId, postId);
 
         return post;
     }

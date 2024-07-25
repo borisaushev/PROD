@@ -3,6 +3,7 @@ package ru.prodcontest.posts.request.create_post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.prodcontest.posts.post.Post;
+import ru.prodcontest.posts.post.repository.PostRepository;
 import ru.prodcontest.posts.post.request_object.CreatePostRequestObject;
 import ru.prodcontest.userInfo.repository.UserRepository;
 
@@ -12,7 +13,7 @@ import java.time.Instant;
 @Service
 public class CreatePostService {
     @Autowired
-    CreatePostRepository repository;
+    PostRepository repository;
 
     @Autowired
     private UserRepository userRepository;

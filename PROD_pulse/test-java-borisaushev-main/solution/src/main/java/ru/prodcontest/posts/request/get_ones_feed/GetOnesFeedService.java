@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.prodcontest.auth.signin.Exceptions.UserDoesntExistsException;
 import ru.prodcontest.posts.post.Post;
 import ru.prodcontest.posts.post.exception.PostIsPrivateException;
+import ru.prodcontest.posts.post.repository.PostRepository;
 import ru.prodcontest.userInfo.User;
 import ru.prodcontest.userInfo.repository.UserRepository;
 
@@ -15,7 +16,7 @@ import java.util.List;
 public class GetOnesFeedService {
 
     @Autowired
-    GetOnesFeedRepository repository;
+    PostRepository repository;
 
     @Autowired
     UserRepository userRepository;

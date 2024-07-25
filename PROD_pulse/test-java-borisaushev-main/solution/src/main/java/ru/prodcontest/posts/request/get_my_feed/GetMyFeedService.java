@@ -3,6 +3,7 @@ package ru.prodcontest.posts.request.get_my_feed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.prodcontest.posts.post.Post;
+import ru.prodcontest.posts.post.repository.PostRepository;
 import ru.prodcontest.userInfo.repository.UserRepository;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
 public class GetMyFeedService {
 
     @Autowired
-    GetMyFeedRepository repository;
+    PostRepository repository;
 
     @Autowired
     UserRepository userRepository;

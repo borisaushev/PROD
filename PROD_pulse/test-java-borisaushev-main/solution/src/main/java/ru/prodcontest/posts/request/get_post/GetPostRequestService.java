@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.prodcontest.posts.post.Post;
 import ru.prodcontest.posts.post.exception.PostIsPrivateException;
 import ru.prodcontest.posts.post.exception.PostNotFoundException;
+import ru.prodcontest.posts.post.repository.PostRepository;
 import ru.prodcontest.userInfo.repository.UserRepository;
 
 import java.util.List;
@@ -14,21 +15,24 @@ import java.util.UUID;
 @Service
 public class GetPostRequestService {
     @Autowired
-    GetPostRequestRepository getPostRequestRepository;
+    PostRepository getPostRequestRepository;
 
     @Autowired
     UserRepository userRepository;
 
-    public Post getPost(int userId, UUID postId) {
+    public Post getPostAndCheckAccess(int requestUserId, UUID postId) {
 
-        Optional<Post> postResult = getPostRequestRepository.findById(postId);
-
-        if(postResult.isEmpty())
-            throw new PostNotFoundException("no such post found");
-
-        Post post = postResult.get();
+        Post post = getPostOrThrowException(postId);
 
         String authorLogin = post.getAuthor();
+
+        checkUserAccessToPost(authorLogin, requestUserId);
+
+        return post;
+
+    }
+
+    private void checkUserAccessToPost(String authorLogin, int userId) {
         int authorId = userRepository.getIdByLogin(authorLogin);
 
         boolean postIsPublic = userRepository.getUserById(authorId).isPublic();
@@ -38,8 +42,15 @@ public class GetPostRequestService {
             if(!friends.contains(userId))
                 throw new PostIsPrivateException("cannot access this post");
         }
-
-        return post;
-
     }
+
+    private Post getPostOrThrowException(UUID postId) {
+        Optional<Post> postResult = getPostRequestRepository.findById(postId);
+
+        if(postResult.isEmpty())
+            throw new PostNotFoundException("no such post found");
+
+        return postResult.get();
+    }
+
 }
