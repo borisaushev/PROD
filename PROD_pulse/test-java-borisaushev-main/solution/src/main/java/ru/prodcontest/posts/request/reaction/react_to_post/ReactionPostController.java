@@ -26,7 +26,7 @@ public class ReactionPostController {
     public Post likePost(@PathVariable("postId") UUID postId, @RequestHeader(name = "Authorization") String token) {
         System.out.println("Reacting to post: " + postId);
 
-        validateToken(token);
+        token = validateToken(token);
 
         int requestUserId = jwtTokenService.getIdByToken(token);
 
@@ -42,7 +42,7 @@ public class ReactionPostController {
 
         System.out.println("Reacting to post: " + postId);
 
-        validateToken(token);
+        token = validateToken(token);
 
         int requestUserId = jwtTokenService.getIdByToken(token);
 
@@ -53,10 +53,11 @@ public class ReactionPostController {
         return post;
     }
 
-    private void validateToken(String token) {
+    private String validateToken(String token) {
         token = jwtTokenService.parseToken(token);
         jwtTokenService.validateToken(token);
         myProfileService.validateTokenForUser(token);
+        return token;
     }
 
 }
